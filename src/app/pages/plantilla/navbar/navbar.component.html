@@ -1,0 +1,19 @@
+<nav>
+    <div class="nav-wrapper cyan accent-4">
+      <a routerLink="" class="brand-logo">Home</a>
+      <a routerLink="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li *ngIf="!sesionActiva"><a routerLink="seguridad/login">Iniciar sesión</a></li>        
+        <li *ngIf="sesionActiva"><a routerLink="administracion/buscar-inmueble">Administrar Inmuebles</a></li>
+        <li *ngIf="sesionActiva"><a routerLink="procesos">Otros procesos</a></li>
+        <li *ngIf="sesionActiva"><a routerLink="seguridad/logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li *ngIf="!sesionActiva"><a routerLink="seguridad/login">Iniciar sesión</a></li>        
+    <li *ngIf="sesionActiva"><a routerLink="administracion/buscar-inmueble">Administrar Inmuebles</a></li>
+    <li *ngIf="sesionActiva"><a routerLink="procesos">Otros procesos</a></li>
+    <li *ngIf="sesionActiva"><a routerLink="seguridad/logout">Logout</a></li>
+  </ul>

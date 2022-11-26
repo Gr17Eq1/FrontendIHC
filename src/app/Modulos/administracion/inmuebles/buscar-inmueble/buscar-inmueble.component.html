@@ -1,0 +1,40 @@
+<button routerLink="../crear-inmueble" class="btn btn-success">Registrar Inmueble</button>
+
+<fieldset class="container resposive-table">
+    <legend>Listado de inmuebles</legend>
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Tipo</th>
+                <th>Oferta</th>
+                <th>Valor</th>
+                <th>Imagen</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="let i of listadoRegistros | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalAmount }">
+                <td>{{i.codigoInm}}</td>
+                <td>{{i.tipoInm}}</td>
+                <td>{{i.tipoOferta}}</td>
+                <td>{{i.valor}}</td>
+                <td><img class="img" src="{{i.imagenInm}}" alt=""></td>
+                <td>
+                    <a routerLink="/administracion/editar-inmueble/{{i.id}}" class="btn btn-success">Editar</a>
+                </td>
+                <td>
+                    <a routerLink="/administracion/eliminar-inmueble/{{i.id}}" class="btn btn-success">Eliminar</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>
+<br />

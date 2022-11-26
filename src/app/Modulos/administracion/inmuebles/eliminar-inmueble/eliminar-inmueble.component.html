@@ -1,0 +1,14 @@
+<div class="container">
+    <fieldset>
+        <legend>Eliminar inmueble</legend>
+        <br />
+        <p>Esta seguro?</p>
+        <table>
+            <tr>Codigo: {{inmueble.codigoInm}}</tr>
+            <tr>Tipo inmueble: {{inmueble.tipoInm}}</tr>
+        </table>
+        <br />
+        <button (click)="EliminarInmueble()" class="btn btn-success blue">SI</button>&nbsp; &nbsp;
+        <button routerLink="/administracion/buscar-inmueble" class="btn btn-success red">NO</button>
+    </fieldset>
+</div>

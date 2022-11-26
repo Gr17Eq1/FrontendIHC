@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="borde green lighten-5 ppal">
+        <div class="container">
+            <h4 style="color:green">Editar Inmueble</h4>
+            <form [formGroup]="formularioEditar">
+                <input formControlName="id" type="hidden">
+                <input formControlName="ubicacionDepartamentoInm" type="hidden">
+                <input formControlName="ubicacionCiudadInm" type="hidden">
+                <input formControlName="direccionInm" type="hidden">
+                <input formControlName="linkYoutubeInm" type="hidden">
+                <input formControlName="participacion" type="hidden">
+                <input formControlName="estadoInm" type="hidden">
+                <input formControlName="fechaActualizacion" type="hidden">
+                <input formControlName="quienActualizo" type="hidden">
+                <div>
+                    <label for="codigoInm">Código del Inmueble</label>
+                    <input formControlName="codigoInm" type="text">
+                    <div class="errorValidacion">
+                        <label
+                            *ngIf="formularioEditar.controls['codigoInm'].errors && formularioEditar.controls['codigoInm'].dirty">
+                            No es una dirección de correo, ingrese su correo
+                        </label>
+                    </div> 
+                </div>
+                <div>
+                    <label for="tipoInm">Tipo (Casa, Apartamento, Local comercial)</label>
+                    <input formControlName="tipoInm" type="text">
+                </div>
+                <div>
+                    <label for="tipoOferta">Tipo (Alquiler, Venta)</label>
+                    <input formControlName="tipoOferta" type="text">
+                </div>
+                <div>
+                    <label for="tipoOferta">Valor del Alquiler o Venta</label>
+                    <input formControlName="valor" type="text">
+                </div>
+                <div>
+                    <label for="tipoOferta">Incluya la URL para observar el inmueble</label>
+                    <input formControlName="imagenInm" type="text">
+                </div>
+                <div class="center">
+                    <button
+                        (click)="Editar()" class="btn waves-effect green lighten-2" type="submit"
+                        name="action">Actualizar
+                        <i class="material-icons right">send</i>
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+h1 {
+    color: blue;
+}
+
+h6 {
+    color: green;
+    text-align: center;
+}
+
+p {
+    background-color: azure;
+}
+
+a {
+    text-align: center;
+    color: green;
+}
+
+.borde {
+    border-radius: 30px;
+    border: 2px solid green;
+    opacity: 10px;
+}
+
+div {
+    padding: 5px;
+}
+
+.fas fa-bars {
+    font-size: 10px;
+    color: rgb(11, 11, 11);
+}
+
+.container {
+    padding: 20px;
+}
+
+.errorValidacion label {
+    color: red;
+    font-weight: bold;
+}

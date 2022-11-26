@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="borde green lighten-5 ppal">
+        <div class="container">
+            <h4 style="color:green">APP-IHC</h4>
+            <form [formGroup]="formularioLogin">
+                <div>
+                    <input formControlName="usuario" type="text" placeholder="Ingrese su correo">
+                    <div class="errorValidacion">
+                        <label *ngIf="formularioLogin.controls['usuario'].errors && formularioLogin.controls['usuario'].dirty">
+                            No es una dirección de correo, ingrese su correo
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <input formControlName="pass" type="password" placeholder="Ingrese su contraseña">
+                    <div class="errorValidacion">
+                        <label *ngIf="formularioLogin.controls['pass'].errors && formularioLogin.controls['pass'].dirty">
+                            Su contraseña deberá contener al menos 7 caracteres, ingrese su contraseña
+                        </label>
+                    </div>
+                </div>
+                <div style="text-align: right; text-decoration: underline;">
+                    <i><a routerLink="/seguridad/recuperar-pass">¿Olvidó su contraseña?</a></i>
+                </div>
+                <div class="center">
+                    <button [disabled]="formularioLogin.controls['usuario'].errors || formularioLogin.controls['pass'].errors" 
+                    (click)="Login()" class="btn waves-effect green lighten-2" type="submit" name="action">login
+                        <i class="material-icons right">send</i>
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
